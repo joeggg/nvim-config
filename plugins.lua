@@ -1,7 +1,25 @@
 local plugins = {
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "python",
+        "rust",
+        "cpp",
+        "json",
+        "yaml"
+      }
+    }
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = { current_line_blame = true }
+  },
+  {
     'neovim/nvim-lspconfig',
-    config = function ()
+    config = function()
       require 'plugins.configs.lspconfig'
       require 'custom.configs.lspconfig'
     end
@@ -21,15 +39,15 @@ local plugins = {
   {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
-    ft = {"python"},
-    opts = function ()
+    ft = { "python" },
+    opts = function()
       return require 'custom.configs.none-ls'
     end
   },
   {
     "rust-lang/rust.vim",
     ft = "rust",
-    init = function ()
+    init = function()
       vim.g.rustfmt_autosave = 1
     end,
   },
@@ -37,16 +55,16 @@ local plugins = {
     "simrat39/rust-tools.nvim",
     ft = "rust",
     dependencies = 'neovim/nvim-lspconfig',
-    opts = function ()
+    opts = function()
       return require 'custom.configs.rust-tools'
     end,
-    config = function (_, opts)
+    config = function(_, opts)
       require('rust-tools').setup(opts)
     end,
   },
   {
     "sindrets/diffview.nvim",
-    ft = {"python", "cpp", "rust"},
+    lazy = false
   },
 }
 
