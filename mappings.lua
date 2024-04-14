@@ -25,4 +25,14 @@ M.diffview = {
   }
 }
 
+M.indent_blankline = {
+  n = {
+    ["<leader>co"] = {
+      function()
+        vim.cmd('IndentBlanklineToggle')
+      end
+    }
+  }
+}
+
 return M

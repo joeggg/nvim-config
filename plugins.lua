@@ -6,6 +6,7 @@ local plugins = {
         "vim",
         "lua",
         "python",
+        "go",
         "rust",
         "cpp",
         "json",
@@ -22,7 +23,7 @@ local plugins = {
     config = function()
       require 'plugins.configs.lspconfig'
       require 'custom.configs.lspconfig'
-    end
+    end,
   },
   {
     "williamboman/mason.nvim",
@@ -33,13 +34,17 @@ local plugins = {
         "json-lsp",
         "pyright",
         "rust-analyzer",
+        "gopls",
       }
     }
   },
   {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
-    ft = { "python" },
+    ft = { "python", "go", "json" },
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    },
     opts = function()
       return require 'custom.configs.none-ls'
     end
@@ -64,8 +69,8 @@ local plugins = {
   },
   {
     "sindrets/diffview.nvim",
-    lazy = false
-  },
+    lazy = false,
+  }
 }
 
 return plugins
