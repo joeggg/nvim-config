@@ -5,7 +5,7 @@ local opts = {
   sources = {
     none_ls.builtins.formatting.clang_format,
     require("none-ls.formatting.jq"),
-    none_ls.builtins.formatting.black.with({
+    require("none-ls.formatting.ruff_format").with({
       prefer_local = ".venv/bin",
       extra_args = { "--line-length", "100" },
     }),
