@@ -25,6 +25,7 @@ M.diffview = {
   }
 }
 
+-- Toggle the vertical lines showing scopes
 M.indent_blankline = {
   n = {
     ["<leader>co"] = {

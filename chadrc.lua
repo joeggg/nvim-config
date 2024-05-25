@@ -14,7 +14,9 @@ M.ui = {
     DiffDelete                 = { fg = "NONE", bg = { "red", -45 } },
     DiffText                   = { fg = "NONE", bg = { "sun", -50 } },
     -- Diff sidebar highlighting
-    DiffChange                 = { fg = "blue" }
+    DiffChange                 = { fg = "blue" },
+    LspInlayHint = {fg = "white"},
+    -- NonText = {fg = "light_grey"}
   },
 }
 M.plugins = 'custom.plugins'

@@ -1,4 +1,18 @@
 local plugins = {
+  -- Inline git blame
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = { current_line_blame = true }
+  },
+  -- Show git status on file tree icons
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      git = { enable = true, ignore = false, },
+      renderer = { icons = { show = { git = true } } }
+    }
+  },
+  -- Syntax highlighting, add to this list for more languages
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -14,10 +28,7 @@ local plugins = {
       }
     }
   },
-  {
-    "lewis6991/gitsigns.nvim",
-    opts = { current_line_blame = true }
-  },
+  -- Required to set up LSP
   {
     'neovim/nvim-lspconfig',
     config = function()
@@ -25,6 +36,8 @@ local plugins = {
       require 'custom.configs.lspconfig'
     end,
   },
+  -- Add LSP servers to install to be handled by nvim-lspconfig
+  -- Run :MasonInstallAll to update them (required for first time use)
   {
     "williamboman/mason.nvim",
     opts = {
@@ -38,6 +51,7 @@ local plugins = {
       }
     }
   },
+  -- For running certain extra tools like an LSP, such as ruff
   {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
@@ -49,6 +63,7 @@ local plugins = {
       return require 'custom.configs.none-ls'
     end
   },
+  -- Format on save for rust
   {
     "rust-lang/rust.vim",
     ft = "rust",
@@ -56,17 +71,24 @@ local plugins = {
       vim.g.rustfmt_autosave = 1
     end,
   },
+  -- Rust LSP server, also provides inlay hints
   {
-    "simrat39/rust-tools.nvim",
-    ft = "rust",
-    dependencies = 'neovim/nvim-lspconfig',
+    'mrcjkb/rustaceanvim',
+    version = '^4',
+    ft = { "rust" },
+    dependencies = {
+      'neovim/nvim-lspconfig',
+      "nvim-lua/plenary.nvim",
+      "mfussenegger/nvim-dap",
+    },
     opts = function()
-      return require 'custom.configs.rust-tools'
+      return require 'custom.configs.rustacean'
     end,
     config = function(_, opts)
-      require('rust-tools').setup(opts)
+      vim.g.rustaceanvim = opts
     end,
   },
+  -- For viewing git diffs, merge conflicts and file history
   {
     "sindrets/diffview.nvim",
     lazy = false,
