@@ -3,6 +3,15 @@ local config = require('plugins.configs.lspconfig')
 local lspconfig = require 'lspconfig'
 local util = require 'lspconfig/util'
 
+local default_opts_servers = { "jsonls", "taplo", "tsserver", "eslint", "sqlls", "tailwindcss" }
+
+for _, lsp in ipairs(default_opts_servers) do
+  lspconfig[lsp].setup {
+    on_attach = config.on_attach,
+    capabilities = config.capabilities,
+  }
+end
+
 lspconfig.pyright.setup {
   on_attach = config.on_attach,
   capabilities = config.capabilities,
@@ -17,10 +26,14 @@ lspconfig.pyright.setup {
   },
 }
 
-lspconfig.jsonls.setup {
-  filetypes = { "json" },
+lspconfig.eslint.setup {
   on_attach = config.on_attach,
   capabilities = config.capabilities,
+  settings = {
+    experimental = {
+      useFlatConfig = false,
+    },
+  }
 }
 
 lspconfig.gopls.setup {

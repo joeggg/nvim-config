@@ -3,7 +3,6 @@ local none_ls = require 'null-ls'
 
 local opts = {
   sources = {
-    none_ls.builtins.formatting.clang_format,
     require("none-ls.formatting.jq"),
     require("none-ls.formatting.ruff_format").with({
       prefer_local = ".venv/bin",
@@ -27,8 +26,11 @@ local opts = {
       },
     }),
     none_ls.builtins.diagnostics.mypy.with({ prefer_local = ".venv/bin" }),
+    none_ls.builtins.formatting.clang_format,
     none_ls.builtins.formatting.gofmt,
     none_ls.builtins.formatting.goimports,
+    none_ls.builtins.formatting.pg_format,
+    none_ls.builtins.formatting.prettierd,
   },
   -- To format on save using the loaded lsp formatter
   on_attach = function(client, bufnr)

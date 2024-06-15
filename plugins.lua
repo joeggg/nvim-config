@@ -24,7 +24,8 @@ local plugins = {
         "rust",
         "cpp",
         "json",
-        "yaml"
+        "yaml",
+        "typescript"
       }
     }
   },
@@ -48,6 +49,12 @@ local plugins = {
         "pyright",
         "rust-analyzer",
         "gopls",
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "prettier",
+        "eslint-lsp",
+        "taplo",
+        "sqlls"
       }
     }
   },
@@ -92,7 +99,7 @@ local plugins = {
   {
     "sindrets/diffview.nvim",
     lazy = false,
-  }
+  },
 }
 
 return plugins
