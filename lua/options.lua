@@ -4,6 +4,9 @@ local sep = is_windows and "\\" or "/"
 local delim = is_windows and ";" or ":"
 vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, sep) .. delim .. vim.env.PATH
 
+vim.o.clipboard = "unnamedplus"
+vim.o.undofile = true
+
 -- Numbers
 vim.o.number = true
 vim.o.numberwidth = 4
@@ -20,3 +23,7 @@ vim.o.softtabstop = 2
 -- Cursor
 vim.o.cursorline = true
 vim.o.cursorlineopt = "both"
+
+-- Searching
+vim.o.ignorecase = true
+vim.o.smartcase = true
