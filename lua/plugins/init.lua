@@ -55,7 +55,10 @@ return {
 	{
 		"ibhagwan/fzf-lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {},
+		opts = {
+			winopts = { border = "shadow", preview = { border = "shadow" } },
+			fzf_colors = { bg = { "bg", "NormalFloat" } },
+		},
 		keys = {
 			{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Search files" },
 			{ "<leader>fo", "<cmd>FzfLua oldfiles<cr>", desc = "Search oldfiles" },
