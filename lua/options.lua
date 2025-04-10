@@ -6,10 +6,11 @@ vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, sep) .. 
 
 vim.o.clipboard = "unnamedplus"
 vim.o.undofile = true
+vim.o.signcolumn = "yes"
 
 -- Numbers
 vim.o.number = true
-vim.o.numberwidth = 4
+vim.o.numberwidth = 2
 vim.o.relativenumber = true
 vim.o.ruler = true
 
