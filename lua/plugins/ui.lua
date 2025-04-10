@@ -20,6 +20,13 @@ return {
 			blink_cmp = true,
 			diffview = true,
 			whichkey = true,
+			color_overrides = {
+				mocha = {
+					base = "#22213d",
+					mantle = "#342038",
+					crust = "#2d245c",
+				},
+			},
 		},
 	},
 	{
@@ -37,13 +44,13 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		opts = {},
+		opts = { scope = { highlight = "CursorLine" } },
 	},
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			theme = "base16",
-		},
+		opts = function()
+			return require("configs.lualine")
+		end,
 	},
 }
