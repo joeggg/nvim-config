@@ -58,6 +58,7 @@ return {
 		opts = {
 			winopts = { border = "shadow", preview = { border = "shadow" } },
 			fzf_colors = { bg = { "bg", "NormalFloat" } },
+			oldfiles = { include_current_session = true },
 		},
 		keys = {
 			{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Search files" },
