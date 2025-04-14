@@ -1,7 +1,7 @@
 return {
-	settings = {
-		experimental = {
-			useFlatConfig = false,
-		},
-	},
+  settings = {
+    experimental = {
+      useFlatConfig = false,
+    },
+  },
 }

@@ -1,3 +1,3 @@
 return {
-	filetypes = { "xml", "xacro", "urdf" },
+  filetypes = { "xml", "xacro", "urdf" },
 }

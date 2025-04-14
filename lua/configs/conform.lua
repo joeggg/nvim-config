@@ -8,6 +8,16 @@ return {
       command = ".venv/bin/ruff",
       prepend_args = { "check", "--select", "I,F401,RUF022" },
     },
+    stylua = {
+      prepend_args = {
+        "--indent-type",
+        "Spaces",
+        "--indent-width",
+        "2",
+        "--call-parentheses",
+        "Always",
+      },
+    },
   },
 
   formatters_by_ft = {

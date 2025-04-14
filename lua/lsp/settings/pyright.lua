@@ -1,10 +1,10 @@
 return {
-	settings = {
-		python = {
-			pythonPath = ".venv/bin/python",
-			analysis = {
-				diagnosticSeverityOverrides = {},
-			},
-		},
-	},
+  settings = {
+    python = {
+      pythonPath = ".venv/bin/python",
+      analysis = {
+        diagnosticSeverityOverrides = {},
+      },
+    },
+  },
 }

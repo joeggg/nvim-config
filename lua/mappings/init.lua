@@ -10,17 +10,17 @@ map("t", "<C-x>", "<C-\\><C-N>", { desc = "escape terminal mode" })
 map({ "n", "t" }, "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
 map({ "n", "v", "s", "o" }, "<C-l>", function()
-	vim.cmd("NvimTreeToggle")
+  vim.cmd("NvimTreeToggle")
 end)
 
 map({ "n", "t" }, "<A-i>", function()
-	require("terminal").toggle({ pos = "float", id = "floatTerm" })
+  require("terminal").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "terminal toggle floating term" })
 
 map("n", "<leader>fm", function()
-	require("conform").format({ lsp_fallback = true })
+  require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
 
 map("n", "<leader>co", function()
-	vim.cmd("IBLToggleScope")
+  vim.cmd("IBLToggleScope")
 end, { desc = "toggle scope lines" })
