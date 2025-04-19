@@ -1,4 +1,5 @@
 require("mappings.dap")
+require("mappings.git")
 require("mappings.movement")
 
 local map = vim.keymap.set
@@ -22,5 +23,5 @@ map("n", "<leader>fm", function()
 end, { desc = "general format file" })
 
 map("n", "<leader>co", function()
-  vim.cmd("IBLToggleScope")
+  vim.cmd("IBLToggle")
 end, { desc = "toggle scope lines" })

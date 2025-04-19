@@ -16,3 +16,7 @@ map({ "n", "v", "s", "o" }, "<C-h>", "<C-w>h")
 map({ "n", "v", "s", "o" }, "<C-j>", "<C-w>k")
 map({ "n", "v", "s", "o" }, "<C-k>", "<C-w>j")
 map({ "n", "v", "s", "o" }, "<C-n>", "<C-w>l")
+
+-- move up and down in plugins using terminal mode e.g. fzf-lua
+map({ "t" }, "<C-j>", "<C-k>")
+map({ "t" }, "<C-k>", "<C-j>")

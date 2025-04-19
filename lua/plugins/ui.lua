@@ -30,13 +30,6 @@ return {
     },
   },
   {
-    "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    opts = function()
-      return require("configs.nvimtree")
-    end,
-  },
-  {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {},
@@ -44,7 +37,7 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
-    opts = { scope = { highlight = "CursorLine" } },
+    opts = {},
   },
   {
     "nvim-lualine/lualine.nvim",

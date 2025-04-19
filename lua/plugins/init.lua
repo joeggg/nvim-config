@@ -54,6 +54,13 @@ return {
     end,
   },
   {
+    "nvim-tree/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    opts = function()
+      return require("configs.nvimtree")
+    end,
+  },
+  {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
@@ -62,9 +69,10 @@ return {
       oldfiles = { include_current_session = true },
     },
     keys = {
-      { "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Search files" },
-      { "<leader>fo", "<cmd>FzfLua oldfiles<cr>", desc = "Search oldfiles" },
-      { "<leader>fw", "<cmd>FzfLua live_grep<cr>", desc = "Live grep" },
+      { "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Fzf search files" },
+      { "<leader>fo", "<cmd>FzfLua oldfiles<cr>", desc = "Fzf search oldfiles" },
+      { "<leader>fw", "<cmd>FzfLua live_grep<cr>", desc = "Fzf live grep" },
+      { "<leader>fh", "<cmd>FzfLua highlights<cr>", desc = "Fzf search highlight groups" },
     },
   },
 }
