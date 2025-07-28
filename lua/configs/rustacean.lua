@@ -6,7 +6,6 @@ local opts = {
     on_attach = function(client, bufnr)
       client.server_capabilities.semanticTokensProvider = nil
       on_attach(client, bufnr)
-      vim.lsp.inlay_hint.enable(true)
     end,
     capabilities = capabilities,
     default_settings = {
@@ -18,11 +17,7 @@ local opts = {
           runBuildScripts = true,
         },
         -- Add clippy lints for Rust.
-        checkOnSave = {
-          allFeatures = true,
-          command = "clippy",
-          extraArgs = { "--no-deps" },
-        },
+        checkOnSave = true,
         procMacro = {
           enable = true,
           ignored = {

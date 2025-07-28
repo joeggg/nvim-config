@@ -21,7 +21,7 @@ return {
         "lua-language-server",
         "prettier",
         "prettierd",
-        "pyright",
+        "basedpyright",
         "rust-analyzer",
         "sqlls",
         "stylua",

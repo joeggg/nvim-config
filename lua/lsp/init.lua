@@ -12,7 +12,7 @@ local servers = {
   "jsonls",
   "lemminx",
   "lua_ls",
-  "pyright",
+  "basedpyright",
   "sqlls",
   "tailwindcss",
   "taplo",
