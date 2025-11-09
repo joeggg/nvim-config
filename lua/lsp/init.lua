@@ -1,5 +1,3 @@
-local lspconfig = require("lspconfig")
-
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 local on_attach = require("lsp.defaults").on_attach
 
@@ -25,10 +23,15 @@ for _, server in ipairs(servers) do
     lsp_settings = {}
   end
 
-  lspconfig[server].setup(vim.tbl_deep_extend("force", {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  }, lsp_settings))
+  vim.lsp.enable(server)
+
+  vim.lsp.config(
+    server,
+    vim.tbl_deep_extend("force", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    }, lsp_settings)
+  )
 end
 
 return {
