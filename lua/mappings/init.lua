@@ -15,7 +15,11 @@ map({ "n", "v", "s", "o" }, "<C-l>", function()
 end)
 
 map({ "n", "t" }, "<A-i>", function()
-  require("terminal").toggle({ pos = "float", id = "floatTerm" })
+  vim.cmd("ToggleTerm direction=float")
+end, { desc = "terminal toggle floating term" })
+
+map({ "n", "t" }, "<A-h>", function()
+  vim.cmd("ToggleTerm direction=horizontal")
 end, { desc = "terminal toggle floating term" })
 
 map("n", "<leader>fm", function()

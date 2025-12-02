@@ -75,4 +75,10 @@ return {
       { "<leader>fh", "<cmd>FzfLua highlights<cr>", desc = "Fzf search highlight groups" },
     },
   },
+  {
+    "akinsho/toggleterm.nvim",
+    opts = function()
+      return require("configs.toggleterm")
+    end,
+  },
 }
