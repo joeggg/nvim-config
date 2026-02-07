@@ -8,7 +8,7 @@ return {
     Normal = { guifg = "#cdd6f4", guibg = "#342038" },
   },
   float_opts = {
-    border = "single",
+    border = "none",
     width = function()
       local screen_w = vim.opt.columns:get()
       return math.floor(screen_w * width_pct)

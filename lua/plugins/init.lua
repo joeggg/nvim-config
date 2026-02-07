@@ -43,16 +43,14 @@ return {
       return require("configs.mason")
     end,
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile" },
-    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    build = ":TSUpdate",
-    main = "nvim-treesitter.configs",
-    opts = function()
-      return require("configs.treesitter")
-    end,
-  },
+  -- Disabled to improve handling of large files
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   build = ":TSUpdate",
+  --   opts = function()
+  --     return require("configs.treesitter")
+  --   end,
+  -- },
   {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },

@@ -12,22 +12,32 @@ return {
       require("alpha").setup(theta.config)
     end,
   },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   priority = 1000,
+  --   opts = {
+  --     blink_cmp = true,
+  --     diffview = true,
+  --     whichkey = true,
+  --     color_overrides = {
+  --       mocha = {
+  --         base = "#22213d",
+  --         mantle = "#342038",
+  --         crust = "#2d245c",
+  --       },
+  --     },
+  --   },
+  -- },
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "navarasu/onedark.nvim",
     priority = 1000,
-    opts = {
-      blink_cmp = true,
-      diffview = true,
-      whichkey = true,
-      color_overrides = {
-        mocha = {
-          base = "#22213d",
-          mantle = "#342038",
-          crust = "#2d245c",
-        },
-      },
-    },
+    config = function()
+      require("onedark").setup({
+        style = "deep",
+      })
+      require("onedark").load()
+    end,
   },
   {
     "folke/which-key.nvim",
