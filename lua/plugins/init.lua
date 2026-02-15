@@ -9,6 +9,7 @@ return {
     init = function()
       local mr = require("mason-registry")
       local ensure_installed = {
+        "arduino-language-server",
         "css-lsp",
         "clangd",
         "clang-format",
