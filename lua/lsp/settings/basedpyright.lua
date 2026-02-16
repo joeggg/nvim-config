@@ -7,7 +7,7 @@ return {
       analysis = {
         typeCheckingMode = "standard",
       },
+      disableOrganizeImports = true,
     },
   },
-  disableOrganizeImports = true,
 }
