@@ -9,8 +9,6 @@ return {
     nerd_font_variant = "normal",
   },
 
-  snippets = { preset = "luasnip" },
-
   completion = {
     menu = { border = "single" },
     documentation = {
