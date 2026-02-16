@@ -32,7 +32,7 @@ return {
     dependencies = {
       "neovim/nvim-lspconfig",
     },
-    version = "^6",
+    version = "^8",
     opts = function()
       return require("configs.rustacean")
     end,

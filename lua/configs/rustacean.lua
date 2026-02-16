@@ -1,5 +1,5 @@
-local on_attach = require("lsp").on_attach
-local capabilities = require("lsp").capabilities
+local capabilities = require("blink.cmp").get_lsp_capabilities()
+local on_attach = require("lsp.defaults").on_attach
 
 local opts = {
   server = {
