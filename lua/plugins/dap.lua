@@ -32,6 +32,16 @@ return {
       "rcarriga/nvim-dap-ui",
     },
     ft = "python",
+    keys = {
+      {
+        "<leader>dp",
+        function()
+          local dappython = require("dap-python")
+          dappython.test_method()
+        end,
+        desc = "DAP Python test method",
+      },
+    },
     config = function()
       local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       local dappython = require("dap-python")
@@ -44,6 +54,16 @@ return {
     dependencies = {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio",
+    },
+    keys = {
+      {
+        "<leader>du",
+        function()
+          local dapui = require("dapui")
+          dapui.toggle()
+        end,
+        desc = "Toggle DAP UI",
+      },
     },
     config = function()
       local dap = require("dap")

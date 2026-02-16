@@ -1,7 +1,5 @@
 -- DEBUGGING
 local dap = require("dap")
-local dapui = require("dapui")
-local dappython = require("dap-python")
 local map = vim.keymap.set
 
 map("n", "<leader>b", function()
@@ -11,14 +9,6 @@ end, { desc = "Toggle breakpoint" })
 map("n", "<leader>db", function()
   dap.continue()
 end, { desc = "DAP continue" })
-
-map("n", "<leader>du", function()
-  dapui.toggle()
-end, { desc = "Toggle DAP UI" })
-
-map("n", "<leader>dp", function()
-  dappython.test_method()
-end, { desc = "DAP Python test method" })
 
 map("n", "<leader>so", function()
   dap.step_over()

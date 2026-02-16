@@ -46,13 +46,13 @@ return {
     end,
   },
   -- Disabled to improve handling of large files
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   build = ":TSUpdate",
-  --   opts = function()
-  --     return require("configs.treesitter")
-  --   end,
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    opts = function()
+      return require("configs.treesitter")
+    end,
+  },
   {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
