@@ -14,6 +14,7 @@ return {
         "clangd",
         "clang-format",
         "debugpy",
+        "docker-language-server",
         "eslint-lsp",
         "gopls",
         "html-lsp",

@@ -5,6 +5,7 @@ local servers = {
   "arduino_language_server",
   "clangd",
   "cssls",
+  "docker_language_server",
   "eslint",
   "gopls",
   "html",
