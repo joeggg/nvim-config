@@ -10,3 +10,5 @@ vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#10344a" })
 vim.api.nvim_set_hl(0, "DiffText", { bg = "#544c00" })
 
 vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#6f758c" })
+
+vim.api.nvim_set_hl(0, "pythonBuiltin", { link = "@lsp.type.builtinType" })

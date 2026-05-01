@@ -17,6 +17,7 @@ local servers = {
   "tailwindcss",
   "taplo",
   "ts_ls",
+  -- "ty",
 }
 
 for _, server in ipairs(servers) do
@@ -35,8 +36,3 @@ for _, server in ipairs(servers) do
     }, lsp_settings)
   )
 end
-
-return {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
