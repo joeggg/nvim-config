@@ -46,13 +46,56 @@ return {
     end,
   },
   -- Disabled to improve handling of large files
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   build = ":TSUpdate",
-  --   config = function()
-  --     require("nvim-treesitter").setup(require("configs.treesitter"))
-  --   end,
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
+    branch = "main",
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function()
+          -- Enable treesitter highlighting and disable regex syntax
+          pcall(vim.treesitter.start)
+          -- Enable folding
+          -- vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+          -- vim.wo.foldmethod = "expr"
+          -- Enable treesitter-based indentation
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
+
+      local ensure_installed = {
+        "lua",
+        "luadoc",
+        "printf",
+        "vim",
+        "vimdoc",
+        "html",
+        "css",
+        "python",
+        "go",
+        "rust",
+        "cpp",
+        "json",
+        "yaml",
+        "typescript",
+        "javascript",
+        "tsx",
+        "dockerfile",
+        "xml",
+      }
+      local already_installed = require("nvim-treesitter.config").get_installed()
+
+      local to_install = vim
+        .iter(ensure_installed)
+        :filter(function(parser)
+          return not vim.tbl_contains(already_installed, parser)
+        end)
+        :totable()
+
+      require("nvim-treesitter").install(to_install)
+    end,
+  },
   {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
