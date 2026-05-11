@@ -29,15 +29,9 @@ return {
   },
   {
     "mrcjkb/rustaceanvim",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-    },
-    version = "^8",
-    opts = function()
-      return require("configs.rustacean")
-    end,
-    config = function(_, opts)
-      vim.g.rustaceanvim = opts
+    version = "^9",
+    config = function()
+      vim.g.rustaceanvim = require("configs.rustacean")
     end,
   },
 }

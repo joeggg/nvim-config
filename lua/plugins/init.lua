@@ -83,6 +83,7 @@ return {
         "tsx",
         "dockerfile",
         "xml",
+        "markdown",
       }
       local already_installed = require("nvim-treesitter.config").get_installed()
 
